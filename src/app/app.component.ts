@@ -1,15 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { UserService } from '../Providers/user.provider';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  users= [];
-  title = 'app';
+  styleUrls: ['./app.component.css'],
+  providers: [UserService]
 
-  constructor(){
+})
+export class AppComponent implements OnInit {
+  title = 'my application test';
+  posts = [];
+
+
+   constructor(public _userService: UserService){
+
+     }
+     ngOnInit(){
+            this. _userService.getPosts()
+          .subscribe(res => this.posts= res)
+    }
 
   }
-}

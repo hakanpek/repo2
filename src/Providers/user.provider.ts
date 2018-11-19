@@ -5,7 +5,7 @@ import { Http, Response } from '@angular/http';
 
 @Injectable()
  export class UserService{
-    private _url: string = 'https://nodeback1.herokuapp.com/products/all';
+    private _url: string = 'https://nodebackendtest.herokuapp.com/products/all';
 
 
     constructor(private _http: Http){

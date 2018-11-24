@@ -42,7 +42,7 @@ import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
        var data = `{ Name: "${name}", Color:"${price}"}`;
-       return this._http.post(`${this.baseUrl}`, data, this.options)
+       return this._http.post(this.baseUrl,JSON.stringify(data),  {headers: this.headers})
        .map(this.extractData)
 
   }

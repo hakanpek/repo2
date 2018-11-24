@@ -15,7 +15,7 @@ import { UserService } from '../Providers/user.provider';
 export class AppComponent implements OnInit {
   title = 'my application test';
   @Input()  posts = [];
-
+  res: any;
 
    constructor(public _userService: UserService){
 

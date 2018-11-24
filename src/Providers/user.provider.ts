@@ -25,6 +25,7 @@ import { Observable } from 'rxjs/Observable';
     //} else {
     //    errMsg = error.message ? error.message : error.toString();
     //}
+    return Observable.throw(error.json() || 'Error');
 
 }
     constructor(private _http: Http){
@@ -43,8 +44,9 @@ import { Observable } from 'rxjs/Observable';
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
        var data = `{ Name: "${name}", Color:"${price}"}`;
-       return this._http.post(this.baseUrl,JSON.stringify(data),  {headers: this.headers})
+       return this._http.post(this.baseUrl, JSON.stringify(data),  {headers: this.headers})
        .map(this.extractData)
+       .catch(this.handleError);
 
   }
 

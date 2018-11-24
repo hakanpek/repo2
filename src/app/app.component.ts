@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { UserService } from '../Providers/user.provider';
+import { Http, Response} from '@angular/http';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   posts = [];
 
 
-   constructor(public _userService: UserService){
+   constructor(public _userService: UserService, private _http: Http){
 
      }
      ngOnInit(){

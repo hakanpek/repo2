@@ -11,7 +11,7 @@
 </ul>
 
 
- product  adı:<input  #productData type="text">
-price: <input  #price type="text">
+ product  adı:<input  #productData type="text" ngModel>
+price: <input  #price type="text" ngModel>
 
 <button type="button" (click)="createProduct(productData.value, price.value)">add</button>

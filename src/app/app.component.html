@@ -10,8 +10,9 @@
       {{ post._id}}    {{ post.name}} -  {{ post.price}}  </li>
 </ul>
 
-
- product  adı:<input  #productData type="text" ngModel>
-price: <input  #price type="text" >
+<form>
+ product  adı:<input  #productData type="text" required>
+price: <input  #price type="text" required>
 
 <button type="button" (click)="createProduct(productData.value, price.value)">add</button>
+</form>

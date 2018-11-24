@@ -44,7 +44,7 @@ import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
        var data = `{ Name: "${name}", Color:"${price}"}`;
        return this._http.post(`${this.baseUrl}`, data, this.options)
        .map(this.extractData)
-       .catch(this.handleError);
+
   }
 
   }

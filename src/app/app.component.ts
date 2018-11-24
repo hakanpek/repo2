@@ -3,6 +3,7 @@ import { UserService } from '../Providers/user.provider';
 import { Http, Response} from '@angular/http';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,12 +16,12 @@ export class AppComponent implements OnInit {
   posts = [];
 
 
-   constructor(public _userService: UserService, private _http: Http){
+   constructor( private _http: Http){
 
      }
      ngOnInit(){
-            this. _userService.getPosts()
-          .subscribe(res => this.posts= res)
+          //   this. _userService.getPosts()
+          // .subscribe(res => this.posts= res)
     }
 
 

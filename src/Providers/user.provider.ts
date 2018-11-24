@@ -3,6 +3,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
  export class UserService{
@@ -38,7 +39,7 @@ import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
      }
 
 
-     createProduct(name: string, price:number){
+     createProduct(name: string, price:number): Observable<any> {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
        var data = `{ Name: "${name}", Color:"${price}"}`;

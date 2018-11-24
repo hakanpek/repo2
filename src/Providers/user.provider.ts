@@ -43,8 +43,8 @@ import { Observable } from 'rxjs/Observable';
      createProduct(name: string, price:number): Observable<any> {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-       var data = `{ Name: "${name}", Color:"${price}"}`;
-       return this._http.post(this.baseUrl, JSON.stringify(data),  {headers: this.headers})
+           var data = `{ Name: "${name}", Color:"${price}"}`;
+       return this._http.post(this.baseUrl, data,  this.options)
        .map(this.extractData)
        .catch(this.handleError);
 

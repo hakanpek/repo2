@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { UserService } from '../Providers/user.provider';
+
 
 
 
@@ -13,7 +14,7 @@ import { UserService } from '../Providers/user.provider';
 })
 export class AppComponent implements OnInit {
   title = 'my application test';
-  posts = [];
+  @Input()  posts = [];
 
 
    constructor(public _userService: UserService){

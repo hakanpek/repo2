@@ -12,6 +12,7 @@ import { UserService } from '../Providers/user.provider';
 export class AppComponent implements OnInit {
   title = 'my application test';
   posts = [];
+  productObj= object = {};
 
 
    constructor(public _userService: UserService){
@@ -22,4 +23,15 @@ export class AppComponent implements OnInit {
           .subscribe(res => this.posts= res)
     }
 
+
+    createProduct = function(product){
+        this.productObj= {
+         "name": product.name
+        }
+           this.this._http.post("https://nodebackendtest.herokuapp.com/products/create", this.productObj)
+           .subscribe((res:Response) => {
+            console.log(res);
+           };
+
+                    
   }

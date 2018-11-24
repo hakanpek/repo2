@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
-import { Http, Response } from '@angular/http';
+import { Http} from '@angular/http';
 
 @Injectable()
  export class UserService{
@@ -16,4 +17,7 @@ import { Http, Response } from '@angular/http';
                 .map((res: Response) => res.json());
 
      }
-    }
+
+   
+
+  }

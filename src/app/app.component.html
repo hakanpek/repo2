@@ -9,3 +9,8 @@
   <li class="list-group-item" *ngFor="let post of posts">
       {{ post._id}}    {{ post.name}} -  {{ post.price}}  </li>
 </ul>
+
+
+ product  adı:<input type="text"  #productData>
+
+<button type="button" (click)="createProduct(productData.value)">add</button>

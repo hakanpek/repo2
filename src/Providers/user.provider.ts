@@ -10,6 +10,8 @@ import { Observable } from 'rxjs/Observable';
     private _url: string = 'https://nodebackendtest.herokuapp.com/products/all';
     private baseUrl: string = 'https://nodebackendtest.herokuapp.com/products/create';
 
+    headers = new Headers({ 'Content-Type': 'application/json' });
+    options = new RequestOptions({ headers: this.headers });
     private extractData(res: Response) {
       let body = res.json();
       return body || {};
@@ -31,9 +33,7 @@ import { Observable } from 'rxjs/Observable';
     constructor(private _http: Http){
     }
 
-    headers = new Headers({ 'Content-Type': 'application/json' });
-    options = new RequestOptions({ headers: this.headers });
-    getPosts(){
+      getPosts(){
        return this._http.get(this._url)
                 .map((res: Response) => res.json());
 

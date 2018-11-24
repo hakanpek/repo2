@@ -11,6 +11,7 @@
 </ul>
 
 
- product  adı:<input type="text"  #productData>
+ product  adı:<input  #productData type="text">
+price: <input  #price type="text">
 
-<button type="button" (click)="createProduct(productData.value)">add</button>
+<button type="button" (click)="createProduct(productData.value, price.value)">add</button>

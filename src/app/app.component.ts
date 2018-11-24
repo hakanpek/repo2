@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { UserService } from '../Providers/user.provider';
-import { Http, Response} from '@angular/http';
+
 
 
 
@@ -16,24 +16,22 @@ export class AppComponent implements OnInit {
   posts = [];
 
 
-   constructor( private _http: Http){
+   constructor(public _userService: UserService){
 
      }
      ngOnInit(){
-          //   this. _userService.getPosts()
-          // .subscribe(res => this.posts= res)
+            this. _userService.getPosts()
+          .subscribe(res => this.posts= res)
     }
 
 
-    createProduct = function(product){
-        this.productObj= {
-         "name": product.name
-        }
-           this.this._http.post("https://nodebackendtest.herokuapp.com/products/create", this.productObj)
-           .subscribe((res:Response) => {
-            console.log(res);
-           });
+    createProduct(name: string, price: number) {
+      this._userService.createProduct(name, price).subscribe(
+        res => {
+            this.posts.push(res);
+         }
+      );
 
-
-  }
+    }
 }
+

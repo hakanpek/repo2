@@ -6,8 +6,8 @@ import { Http, Response} from '@angular/http';
 
 @Injectable()
  export class UserService{
-    // private _url: string = 'https://front-end-test.azurewebsites.net/api/todo';
-    private _url: string = 'https://nodebackendtest.herokuapp.com/products/all';
+     private _url: string = 'https://front-end-test.azurewebsites.net/api/todo';
+    private baseUrl: string = 'https://nodebackendtest.herokuapp.com/products/all';
 
     constructor(private _http: Http){
     }
@@ -19,5 +19,11 @@ import { Http, Response} from '@angular/http';
      }
 
 
+     createProduct(name: string, price:number){
+
+       var data = `{ Name: "${name}", Color:"${price}"}`;
+      return this._http.post(`${this.baseUrl}}`, data)
+      .map((res: Response) => res.json());
+  }
 
   }

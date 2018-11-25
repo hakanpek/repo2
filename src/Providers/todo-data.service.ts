@@ -22,7 +22,6 @@ import { Http, HttpHeaders, RequestOptions, Response, Jsonp} from '@angular/http
       getAllTodos() {
       let  headers = new HttpHeaders
       .set({'Content-Type': 'application/json'});
-     let  options = new RequestOptions({ headers: this.headers });
         return this._http.get(this._url + 'GetAllFeed')
       .map((res: Response) => res.json())
     }

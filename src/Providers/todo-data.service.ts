@@ -46,10 +46,11 @@ import { Observable } from 'rxjs/Observable';
 
     /////////   DELETE
     removeTodo(todo: Todo) {
-      return this._http.delete(this._url + { id: todo.id})
+      return this._http.delete(this._url, todo.id)
      .map((response: Response) => response.json())
       }
 
+     //  https://front-end-test.azurewebsites.net/api/todo[object%20Object] yapar
          // Simulate PUT  ama  çalışmıyor  4
         //  toggleTodoComplete(todo: Todo) {
         //   const updateTodoById = this._url + 'Feed/' + todo.keyword;

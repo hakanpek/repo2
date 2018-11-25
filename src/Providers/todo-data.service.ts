@@ -55,13 +55,13 @@ import { Observable } from 'rxjs/Observable';
 
       toggleTodoComplete(todo: Todo) {
         const updateTodoById = this._url + '/' + todo.id;
-        return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: !todo.isComplete})
+        return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: todo.complete})
         .map((response: Response) => response.json())
 
       }
 
 
-      //   put  yapma
+      //   put  yapma  postman
     //  https://front-end-test.azurewebsites.net/api/todo/5
     // {   "id": 5,
     // "name": "hakan5",
@@ -81,7 +81,7 @@ import { Observable } from 'rxjs/Observable';
 
 
 
-  //1 put olayı  toggleTodoComplete(todo: Todo) {
+  //1 put olayı 1  toggleTodoComplete(todo: Todo) {
   //   const updateTodoById = this._url + '/' + todo.id;
   //   return this._http.put(updateTodoById,{id: todo.id, keyword:todo.name, complete: !todo.complete })
   //   .map((response: Response) => response.json())
@@ -91,6 +91,26 @@ import { Observable } from 'rxjs/Observable';
   // "name": null,
   // "isComplete": false     bunu verir  false true  verir  ama  name i  siler
 
+  /// put olayı2
+//   const updateTodoById = this._url + '/' + todo.id;
+//   return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: !todo.isComplete})
+
+// <li *ngFor="let todo of todos" [class.completed]="todo.isComplete">
+// <div class="view">
+// <input style="outline:0;" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.isComplete">
+// <label> {{todo.name}}</label>
+// <label> {{todo.isComplete}}</label>
+
+
+// toggleTodoComplete(todo){
+//   this.todoDataService.toggleTodoComplete(todo).subscribe();
+//   // todo = new Todo();
+//     }
+// 1 kere  consola  false  yazanı tıklarsan  true  yapar  2.sinde  yapmaz  ve  service e  yazmaz
+// complete: true
+// id: 12
+// name: "Item 3"
+ /// put olayı2
 
 
 

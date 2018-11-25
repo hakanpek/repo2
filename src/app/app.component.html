@@ -7,9 +7,9 @@
 
    <section class="main" *ngIf="todos.length > 0">
     <ul class="todo-list">
-      <li *ngFor="let todo of todos" [class.completed]="todo.isComplete">
+      <li *ngFor="let todo of todos" [class.completed]="todo.complete">
             <div class="view">
-          <input style="outline:0;" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.isComplete">
+          <input style="outline:0;" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
           <label> {{todo.name}}</label>
           <label> {{todo.isComplete}}</label>
 

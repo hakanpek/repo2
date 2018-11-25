@@ -40,7 +40,7 @@ import { Observable } from 'rxjs/Observable';
     }
    ///////
     addTodo(todo: Todo)  {
-      return this._http.post(this._url + 'Feed', { keyword: todo.keyword})
+      return this._http.post(this._url + { name: todo.name})
       .map((res: Response) => res.json())
      }
 

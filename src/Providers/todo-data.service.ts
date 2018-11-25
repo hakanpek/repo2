@@ -54,8 +54,8 @@ import { Observable } from 'rxjs/Observable';
 
 
       toggleTodoComplete(todo: Todo) {
-        const updateTodoById = this._url + '/' + todo.keyword;
-        return this._http.put(updateTodoById,{id: todo.id, keyword:todo.keyword, complete: !todo.complete })
+        const updateTodoById = this._url + '/' + todo.id;
+        return this._http.put(updateTodoById,{id: todo.id, keyword:todo.name, complete: !todo.complete })
         .map((response: Response) => response.json())
 
       }
@@ -67,6 +67,20 @@ import { Observable } from 'rxjs/Observable';
     // "name": "hakan5",
     // "isComplete": true
     // }     put yapar
+
+
+
+    // toggleTodoComplete(todo: Todo) {
+    //   const updateTodoById = this._url + '/' + todo.keyword;
+    //   return this._http.put(updateTodoById,{id: todo.id, keyword:todo.keyword, complete: !todo.complete })
+    //   .map((response: Response) => response.json())
+
+    // }
+
+   //  https://front-end-test.azurewebsites.net/api/todo/undefined   yapar
+
+
+
 
 
 

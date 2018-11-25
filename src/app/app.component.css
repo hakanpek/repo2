@@ -22,8 +22,9 @@ top: -2%;
 .todos .checked {
   text-decoration: line-through;
 }
-.todos li.checked {
-  text-decoration: line-through;
+.todo-list li.completed  label {
+	color: #d9d9d9;
+	text-decoration: line-through;
 }
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;

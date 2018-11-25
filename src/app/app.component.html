@@ -2,7 +2,7 @@
 <section class="todoapp">
   <header class="header">
     <h1>Keyword Yönetimi</h1>
-    <input  class="new-todo" placeholder="What needs to be done" autofocus="" [(ngModel)]="newTodo.name"  (keyup.enter)="addTodo()">
+    <input  class="new-todo" placeholder="What needs to be done" autofocus="" [(ngModel)]="newTodo.name"  (blur)="addTodo()">
   </header>
 
    <section class="main" *ngIf="todos.length > 0">

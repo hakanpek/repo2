@@ -1,38 +1,52 @@
-import { Component, OnInit, Input} from '@angular/core';
-import { UserService } from '../Providers/user.provider';
+import {Component, OnInit, Input} from '@angular/core';
 
-
-
+import { TodoDataService } from '../Providers/todo-data.service';
+import { Todo } from './todo';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [UserService]
-
+  selector: 'app-date',
+  templateUrl: './date.component.html',
+  styleUrls: ['./date.component.css'],
+  providers: [TodoDataService]
 })
-export class AppComponent implements OnInit {
-  title = 'my application test';
-  @Input()  posts = [];
-  res: any;
+export class AppComponent implements OnInit{
+  newTodo: Todo = new Todo();
+  todos: Todo[] = [];//fazla */
 
-   constructor(public _userService: UserService){
+  constructor(private todoDataService: TodoDataService) {
+    this.todoDataService = todoDataService;
+  }
 
+   addTodo() {  // 1
+    this.todoDataService.addTodo(this.newTodo).subscribe();
+    this.todos.push(this.newTodo);//eklendi*/
+     return  this.newTodo = new Todo();
+
+
+  }
+   removeTodo(todo){ //2
+    this.todoDataService.removeTodo(todo).subscribe();
+       this.todos.splice(this.todos.indexOf(todo), 1);
+      //  alert('silindi');
      }
-     ngOnInit(){
-            this. _userService.getPosts()
-          .subscribe(res => this.posts= res)
+
+     toggleTodoComplete(todo){
+      this.todoDataService.toggleTodoComplete(todo).subscribe();
+      // todo = new Todo();
+        }
+
+
+
+
+     get TodoDataService() {
+      return this.todoDataService.getAllTodos();
     }
 
+      ngOnInit() {
+      this.todoDataService.getAllTodos()
+      .subscribe(resPostData => this.todos = resPostData);
+       }
 
-    createProduct(name: string, price: number) {
-      this._userService.createProduct(name, price).subscribe(
-        res => {
-            this.posts.push(res);
-         }
-      );
-
-    }
-}
-
+      }

@@ -1,18 +1,23 @@
-<p>HAKAN</p>
-<p>HAKAN2</p>
-<p>HAKAN3</p>
-<p>hakan4</p>
-<p>hakan5</p>
-<p>31.10.2018 test</p>
-<ul class="list-group">
-  <li class="list-group-item"></li>
-  <li class="list-group-item" *ngFor="let post of posts">
-      {{ post._id}}    {{ post.name}} -  {{ post.price}}  </li>
-</ul>
 
-<form>
- product  adı:<input  #productData type="text" required>
-price: <input  #price type="text" required>
+<section class="todoapp">
+  <header class="header">
+    <h1>Keyword Yönetimi</h1>
+    <input  class="new-todo" placeholder="What needs to be done" autofocus="" [(ngModel)]="newTodo.keyword"  (keyup.enter)="addTodo()">
+  </header>
 
-<button type="button" (click)="createProduct(productData.value, price.value)">add</button>
-</form>
+   <section class="main" *ngIf="todos.length > 0">
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+            <div class="view">
+          <input style="outline:0;" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+          <label> {{todo.keyword}}</label>
+
+         <button class="destroy" (click)="removeTodo(todo)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer" *ngIf="todos.length > 0">
+    <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+</section>

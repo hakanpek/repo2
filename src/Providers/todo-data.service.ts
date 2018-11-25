@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Todo } from '../app/todo';
-import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
+import { Http, HttpHeaders, RequestOptions, Response, Jsonp} from '@angular/http';
 
 @Injectable()
       export class TodoDataService {
@@ -20,10 +20,13 @@ import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
 
   //////// GET
       getAllTodos() {
-      return this._http.get(this._url + 'GetAllFeed')
+      let  headers = new HttpHeaders
+      .set({'Content-Type': 'application/json'});
+     let  options = new RequestOptions({ headers: this.headers });
+        return this._http.get(this._url + 'GetAllFeed')
       .map((res: Response) => res.json())
     }
-   ///////   CREATE
+   ///////
     addTodo(todo: Todo)  {
       return this._http.post(this._url + 'Feed', { keyword: todo.keyword})
       .map((res: Response) => res.json())

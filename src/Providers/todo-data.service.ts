@@ -46,7 +46,7 @@ import { Observable } from 'rxjs/Observable';
 
     /////////   DELETE
     removeTodo(todo: Todo) {
-      const deleteUrl = this._url + { name: todo.keyword}
+      const deleteUrl = this._url + todo.id
       return this._http.delete(deleteUrl)
      .map((response: Response) => response.json())
       }
@@ -64,6 +64,15 @@ import { Observable } from 'rxjs/Observable';
      //  https://front-end-test.azurewebsites.net/api/todo[object%20Object] yapar
 
 //////
+
+/////3
+
+// const deleteUrl = this._url + { name: todo.keyword}
+//  return this._http.delete(deleteUrl)
+ //  https://front-end-test.azurewebsites.net/api/todo[object%20Object] yapar
+////
+
+
 
 
          // Simulate PUT  ama  çalışmıyor  4

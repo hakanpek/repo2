@@ -8,8 +8,8 @@ import { Http, HttpHeaders, RequestOptions, Response, Jsonp} from '@angular/http
         private _url: string = 'http://twitteranalyticsservice.azurewebsites.net/Twitter/';
         lastId: number = 0;
         todos: Todo[] = [];
-        headers = new Headers({ 'Content-Type': 'application/json' });
-        options = new RequestOptions({ headers: this.headers });
+       headers = new Headers({ 'Content-Type': 'application/json' });
+       options = new RequestOptions({ headers: this.headers });
 
 
         private extractData(res: Response) {
@@ -20,8 +20,6 @@ import { Http, HttpHeaders, RequestOptions, Response, Jsonp} from '@angular/http
 
   //////// GET
       getAllTodos() {
-      let  headers = new HttpHeaders
-      .set({'Content-Type': 'application/json'});
         return this._http.get(this._url + 'GetAllFeed')
       .map((res: Response) => res.json())
     }

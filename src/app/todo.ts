@@ -2,7 +2,7 @@ export class Todo {
   id: number;
   name: string = '';
    keyword: string = '';
-  isComplete: boolean = false;
+  complete: boolean = false;
 //  values: any[];
 
 constructor(values: Object = {}) {

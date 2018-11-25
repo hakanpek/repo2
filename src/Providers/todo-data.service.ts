@@ -5,7 +5,8 @@ import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 @Injectable()
       export class TodoDataService {
-        private _url: string = 'http://twitteranalyticsservice.azurewebsites.net/Twitter/';
+        // private _url: string = 'http://twitteranalyticsservice.azurewebsites.net/Twitter/';
+        private _url: string = 'https://front-end-test.azurewebsites.net/api/todo';
         lastId: number = 0;
         todos: Todo[] = [];
 
@@ -34,7 +35,7 @@ import { Observable } from 'rxjs/Observable';
 
   //////// GET
       getAllTodos() {
-        return this._http.get(this._url + 'GetAllFeed')
+        return this._http.get(this._url)
       .map((res: Response) => res.json())
     }
    ///////

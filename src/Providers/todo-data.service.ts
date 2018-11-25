@@ -55,7 +55,7 @@ import { Observable } from 'rxjs/Observable';
 
       toggleTodoComplete(todo: Todo) {
         const updateTodoById = this._url + '/' + todo.id;
-        return this._http.put(updateTodoById, {id: todo.id, name:todo.keyword , complete: !todo.isComplete})
+        return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: !todo.isComplete})
         .map((response: Response) => response.json())
 
       }

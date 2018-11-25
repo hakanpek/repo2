@@ -8,7 +8,7 @@
   // "id": 5,
   // "name": null,
   // "isComplete": false     bunu verir  false true  verir  ama  name i  siler
-   //1 put olayı 1 
+   //1 put olayı 1
 /////////////////////////////////////////   2
 
    /// put olayı2
@@ -57,7 +57,7 @@ service
 
       }
  //1 put olayı 3
- ///////////////////////////////////  
+ ///////////////////////////////////
 
 ///////////////////////////////////////////   4
  /// put olayı4    name ve id  complete  gönderir    consola  true  yazar  ama  serviste  "isComplete": false  kalır
@@ -79,6 +79,6 @@ service
 //   // todo = new Todo();
 //     }
 
-//    
+//
  /// put olayı4
  ////////////////////////////////

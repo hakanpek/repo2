@@ -46,8 +46,7 @@ import { Observable } from 'rxjs/Observable';
 
     /////////   DELETE
     removeTodo(todo: Todo) {
-    const deleteUrl = this._url
-     return this._http.delete(deleteUrl + todo.id)
+      return this._http.delete(this._url, { id: todo.id})
      .map((response: Response) => response.json())
       }
 

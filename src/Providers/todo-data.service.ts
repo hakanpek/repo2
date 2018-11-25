@@ -55,7 +55,7 @@ import { Observable } from 'rxjs/Observable';
 
       toggleTodoComplete(todo: Todo) {
         const updateTodoById = this._url + '/' + todo.id;
-        return this._http.put(updateTodoById, {id: todo.id, name:todo.name, complete: !todo.complete })
+        return this._http.put(updateTodoById, {id: todo.id, name:todo.keyword , complete: !todo.isComplete})
         .map((response: Response) => response.json())
 
       }
@@ -81,7 +81,7 @@ import { Observable } from 'rxjs/Observable';
 
 
 
-  //  toggleTodoComplete(todo: Todo) {
+  //1 put olayı  toggleTodoComplete(todo: Todo) {
   //   const updateTodoById = this._url + '/' + todo.id;
   //   return this._http.put(updateTodoById,{id: todo.id, keyword:todo.name, complete: !todo.complete })
   //   .map((response: Response) => response.json())
@@ -89,7 +89,7 @@ import { Observable } from 'rxjs/Observable';
   // }
   // "id": 5,
   // "name": null,
-  // "isComplete": false     bunu verir
+  // "isComplete": false     bunu verir  false true  verir  ama  name i  siler
 
 
 

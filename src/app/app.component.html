@@ -11,7 +11,7 @@
             <div class="view">
           <input style="outline:0;" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.isComplete">
           <label> {{todo.name}}</label>
-          <label> {{isComplete == !todo.isComplete ? 'true' : 'false'}}</label>
+          <label> {{isComplete == !todo.isComplete ? 'false' : 'true'}}</label>
 
          <button class="destroy" (click)="removeTodo(todo)"></button>
         </div>

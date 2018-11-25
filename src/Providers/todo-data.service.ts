@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Todo } from '../app/todo';
-import { Http, HttpHeaders, RequestOptions, Response, Jsonp} from '@angular/http';
+import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 @Injectable()
       export class TodoDataService {

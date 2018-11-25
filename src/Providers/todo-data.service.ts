@@ -1,14 +1,21 @@
 import {Injectable} from '@angular/core';
-import { Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Todo } from '../app/todo';
-
+import { Http, Headers, RequestOptions, Response, Jsonp} from '@angular/http';
 
 @Injectable()
       export class TodoDataService {
         private _url: string = 'http://twitteranalyticsservice.azurewebsites.net/Twitter/';
         lastId: number = 0;
         todos: Todo[] = [];
+        headers = new Headers({ 'Content-Type': 'application/json' });
+        options = new RequestOptions({ headers: this.headers });
+
+
+        private extractData(res: Response) {
+          let body = res.json();
+          return body || {};
+      }
         constructor(private _http: Http) {  }
 
   //////// GET

@@ -34,7 +34,7 @@ export class AppComponent implements OnInit{
 
      toggleTodoComplete(todo){
       this.todoDataService.toggleTodoComplete(todo).subscribe();
-      todo = new Todo();
+     // todo = new Todo();
         }
 
 

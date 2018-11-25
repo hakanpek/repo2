@@ -53,6 +53,21 @@ import { Observable } from 'rxjs/Observable';
       }
 
 
+      toggleTodoComplete(todo: Todo) {
+        const updateTodoById = this._url + '/' + todo.keyword;
+        return this._http.put(updateTodoById,{id: todo.id, keyword:todo.name, complete: !todo.complete })
+        .map((response: Response) => response.json())
+
+      }
+
+
+      //   put  yapma
+    //  https://front-end-test.azurewebsites.net/api/todo/5
+    // {   "id": 5,
+    // "name": "hakan5",
+    // "isComplete": true
+    // }     put yapar
+
 
 
 //////1  hiç göndermez   200,201,204  yapar
@@ -91,12 +106,7 @@ import { Observable } from 'rxjs/Observable';
 
 
 
-    toggleTodoComplete(todo: Todo) {
-      const updateTodoById = this._url + 'Feed/' + todo.keyword;
-      return this._http.put(updateTodoById,{id: todo.id, keyword:todo.keyword, complete: !todo.complete })
-      .map((response: Response) => response.json())
 
-          }
 
       // deleteTodoById(id: number): TodoDataService {
       //   this.todos = this.todos

@@ -53,13 +53,35 @@ import { Observable } from 'rxjs/Observable';
       }
 
 
-      toggleTodoComplete(todo: Todo) {
-        const updateTodoById = this._url + '/' + todo.id;
-        return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: !todo.complete})
-        .map((response: Response) => response.json())
+      // toggleTodoComplete(todo: Todo) {
+      //   const updateTodoById = this._url + '/' + todo.id;
+      //   return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: !todo.complete})
+      //   .map((response: Response) => response.json())
 
+      // }
+      updateTodoById(id: number, values: Object = {}): Todo {
+        let todo = this.getTodoById(id);
+        if (!todo) {
+          return null;
+        }
+        Object.assign(todo, values);
+        return todo;
       }
 
+
+      toggleTodoComplete(todo: Todo){
+        let updatedTodo = this.updateTodoById(todo.id, {
+          complete: !todo.complete
+        });
+        return updatedTodo;
+      }
+
+
+      getTodoById(id: number): Todo {
+        return this.todos
+          .filter(todo => todo.id === id)
+          .pop();
+      }
 
       //   put  yapma  postman
     //  https://front-end-test.azurewebsites.net/api/todo/5

@@ -32,10 +32,10 @@ export class AppComponent implements OnInit{
       //  alert('silindi');
      }
 
-    //  toggleTodoComplete(todo){
-    //   this.todoDataService.toggleTodoComplete(todo).subscribe();
-    //  // todo = new Todo();
-    //     }
+     toggleTodoComplete(todo){
+      this.todoDataService.toggleTodoComplete(todo).subscribe();
+
+        }
 
 
 

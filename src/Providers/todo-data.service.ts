@@ -113,6 +113,32 @@ import { Observable } from 'rxjs/Observable';
  /// put olayı2
 
 
+ /// put olayı3
+//  toggleTodoComplete(todo: Todo) {
+//   const updateTodoById = this._url + '/' + todo.id;
+//   return this._http.put(updateTodoById, {id: todo.id, name:todo.name , complete: todo.complete})
+//   .map((response: Response) => response.json())
+
+// }
+
+// <li *ngFor="let todo of todos" [class.completed]="todo.complete">
+// <div class="view">
+// <input style="outline:0;" class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+// <label> {{todo.name}}</label>
+// <label> {{todo.isComplete}}</label>
+
+// toggleTodoComplete(todo){
+//   this.todoDataService.toggleTodoComplete(todo).subscribe();
+//   // todo = new Todo();
+//     }
+
+//     name ve id  gönderir  complete  göndermez
+
+
+
+ /// put olayı3
+
+
 
 //////1  hiç göndermez   200,201,204  yapar
    //   return this._http.delete(this._url, todo.id)

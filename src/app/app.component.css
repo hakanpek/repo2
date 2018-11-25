@@ -22,6 +22,9 @@ top: -2%;
 .todos .checked {
   text-decoration: line-through;
 }
+.todos li.checked {
+  text-decoration: line-through;
+}
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;

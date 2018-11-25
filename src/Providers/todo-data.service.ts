@@ -45,8 +45,8 @@ import { Observable } from 'rxjs/Observable';
      }
 
     /////////   DELETE
-    removeTodo(todo: Todo) {
-      const deleteUrl = this._url + todo.id
+    removeTodo(todo:Todo) {
+      const deleteUrl = this._url + {todo:todo.id}
       return this._http.delete(deleteUrl)
      .map((response: Response) => response.json())
       }
@@ -72,6 +72,10 @@ import { Observable } from 'rxjs/Observable';
  //  https://front-end-test.azurewebsites.net/api/todo[object%20Object] yapar
 ////
 
+/////4
+// const deleteUrl = this._url + todo.id
+// return this._http.delete(deleteUrl)
+/// https://front-end-test.azurewebsites.net/api/todo3
 
 
 

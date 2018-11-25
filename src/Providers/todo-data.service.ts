@@ -55,7 +55,7 @@ import { Observable } from 'rxjs/Observable';
 
 
 
-//////1  hiç göndermez   200  ve  201  yapar
+//////1  hiç göndermez   200,201,204  yapar
    //   return this._http.delete(this._url, todo.id)
     //  https://front-end-test.azurewebsites.net/api/todo
 

@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-date',
-  templateUrl: './date.component.html',
-  styleUrls: ['./date.component.css'],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   providers: [TodoDataService]
 })
 export class AppComponent implements OnInit{

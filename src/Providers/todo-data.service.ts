@@ -2,20 +2,34 @@ import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Todo } from '../app/todo';
 import { Http, HttpHeaders, RequestOptions, Response, Jsonp} from '@angular/http';
-
+import { Observable } from 'rxjs/Observable';
 @Injectable()
       export class TodoDataService {
         private _url: string = 'http://twitteranalyticsservice.azurewebsites.net/Twitter/';
         lastId: number = 0;
         todos: Todo[] = [];
-       headers = new Headers({ 'Content-Type': 'application/json' });
-       options = new RequestOptions({ headers: this.headers });
 
-
+        headers = new Headers({ 'Content-Type': 'application/json' });
+        options = new RequestOptions({ headers: this.headers });
         private extractData(res: Response) {
           let body = res.json();
           return body || {};
       }
+
+      private handleError(error: Response | any) {
+        // In a real world app, we might use a remote logging infrastructure
+        //let errMsg: string;
+        //if (error instanceof Response) {
+        //    const body = error.json() || '';
+        //    const err = body.error || JSON.stringify(body);
+        //    errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+        //} else {
+        //    errMsg = error.message ? error.message : error.toString();
+        //}
+        return Observable.throw(error.json() || 'Error');
+
+    }
+
         constructor(private _http: Http) {  }
 
   //////// GET
